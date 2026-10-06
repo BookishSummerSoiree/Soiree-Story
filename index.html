@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>The Multi-Author Story — A Bookish Summer Soirée</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Lora:ital,wght@0,400;0,500;1,400;1,500&family=Montserrat:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  color-scheme:light;
+  --navy:#0C1E3D;--navy-soft:#24365A;
+  --terracotta:#E4593F;--terracotta-dark:#C3432B;
+  --sage:#94A177;--sage-dark:#6E7B54;
+  --cream:#F7EFE1;--paper:#FFFBF4;--blush:#E9C9BD;
+  --ink:#1B2740;--ink-soft:#5C6478;
+  --line:rgba(12,30,61,.14);
+}
+html{-webkit-text-size-adjust:100%}
+body{
+  font-family:'Montserrat',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  background:var(--cream);color:var(--ink);line-height:1.6;font-size:16px;
+  -webkit-font-smoothing:antialiased;min-height:100vh;
+}
+
+/* ── Masthead ── */
+.masthead{
+  background:var(--navy);color:var(--cream);text-align:center;
+  padding:calc(env(safe-area-inset-top,0px) + 38px) 20px 64px;position:relative;overflow:hidden;
+}
+.masthead::before,.masthead::after{
+  content:"";position:absolute;border-radius:50%;pointer-events:none;
+}
+.masthead::before{width:260px;height:260px;left:-110px;top:-120px;background:rgba(228,89,63,.18)}
+.masthead::after{width:200px;height:200px;right:-80px;bottom:-110px;background:rgba(148,161,119,.22)}
+.script{font-family:'Alex Brush',cursive;font-size:34px;line-height:1.1;color:#F3B8A6;position:relative}
+.masthead h1{
+  font-family:'Playfair Display',Georgia,serif;font-weight:600;
+  font-size:clamp(30px,7.2vw,46px);line-height:1.12;margin-top:6px;letter-spacing:.005em;position:relative;
+}
+.masthead .rule{
+  display:flex;align-items:center;justify-content:center;gap:12px;margin-top:16px;
+  color:var(--sage);font-size:13px;letter-spacing:.3em;position:relative;
+}
+.masthead .rule::before,.masthead .rule::after{content:"";height:1px;width:46px;background:rgba(247,239,225,.35)}
+
+/* ── Layout ── */
+main{max-width:660px;margin:-36px auto 0;padding:0 16px 64px;position:relative}
+.card{
+  background:var(--paper);border:1px solid var(--line);border-radius:18px;
+  padding:26px 24px;margin-bottom:18px;box-shadow:0 10px 28px -18px rgba(12,30,61,.45);
+}
+@media(max-width:420px){.card{padding:22px 18px}}
+.hidden{display:none!important}
+
+.hello{font-family:'Playfair Display',Georgia,serif;font-size:25px;font-weight:600;color:var(--navy);line-height:1.25}
+.hello em{font-style:italic;color:var(--terracotta)}
+.lede{margin-top:12px;font-size:15.5px}
+.lede + .lede{margin-top:10px}
+.lede strong{color:var(--navy);font-weight:600}
+.catch{
+  margin-top:16px;padding:14px 16px;border-radius:12px;background:#FBE9E2;
+  border-left:4px solid var(--terracotta);font-size:15px;
+}
+.catch b{display:block;font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--terracotta-dark);margin-bottom:3px}
+.fine{margin-top:14px;font-size:13.5px;color:var(--ink-soft)}
+
+/* ── Steps ── */
+.step-head{display:flex;gap:14px;align-items:flex-start;margin-bottom:14px}
+.num{
+  flex:0 0 38px;height:38px;border-radius:50%;background:var(--navy);color:var(--cream);
+  font-family:'Playfair Display',Georgia,serif;font-size:18px;font-weight:600;
+  display:flex;align-items:center;justify-content:center;
+}
+.step-head h2{font-family:'Playfair Display',Georgia,serif;font-size:20px;font-weight:600;color:var(--navy);line-height:1.25}
+.step-head p{font-size:14px;color:var(--ink-soft);margin-top:3px}
+
+.handoff{
+  position:relative;background:var(--cream);border-radius:14px;padding:22px 20px 20px 24px;
+  font-family:'Lora',Georgia,serif;font-style:italic;font-size:18px;line-height:1.65;color:var(--navy);
+  border:1px dashed rgba(12,30,61,.3);white-space:pre-wrap;overflow-wrap:anywhere;
+}
+.handoff::before{
+  content:"\201C";position:absolute;left:10px;top:-14px;font-family:'Playfair Display',Georgia,serif;
+  font-style:normal;font-size:56px;line-height:1;color:var(--terracotta);
+}
+.opener{
+  background:#EEF1E6;border-radius:14px;padding:18px 20px;border:1px solid rgba(110,123,84,.35);
+  font-size:15px;color:#3F4A2E;
+}
+.opener strong{font-family:'Playfair Display',Georgia,serif;font-size:18px;color:var(--sage-dark);display:block;margin-bottom:2px}
+
+textarea{
+  display:block;width:100%;resize:vertical;border:1.5px solid var(--line);border-radius:12px;
+  background:#fff;color:var(--ink);padding:14px 16px;
+  font-family:'Lora',Georgia,serif;font-size:17px;line-height:1.65;
+  transition:border-color .15s,box-shadow .15s;
+}
+textarea::placeholder{color:#A3A8B5;font-style:italic}
+textarea:focus{outline:none;border-color:var(--navy);box-shadow:0 0 0 4px rgba(12,30,61,.1)}
+#f-body{min-height:210px}
+#f-tail{min-height:120px;background:#FFF8F4}
+
+/* ── Counter ── */
+.counter{margin-top:10px}
+.bar{height:6px;border-radius:99px;background:rgba(12,30,61,.1);overflow:hidden}
+.bar i{display:block;height:100%;width:0;border-radius:99px;background:var(--sage);transition:width .12s linear,background .15s}
+.count-row{display:flex;justify-content:space-between;align-items:baseline;margin-top:6px;font-size:13px;color:var(--ink-soft)}
+.count-row .left{font-weight:700;font-size:15px;color:var(--sage-dark);font-variant-numeric:tabular-nums}
+.counter.warn .bar i{background:#D9A441}
+.counter.warn .left{color:#9A6B12}
+.counter.full .bar i{background:var(--terracotta)}
+.counter.full .left{color:var(--terracotta-dark)}
+
+/* ── Submit ── */
+.btn{
+  display:block;width:100%;border:none;border-radius:999px;cursor:pointer;
+  background:var(--terracotta);color:#fff;padding:17px 22px;
+  font-family:'Montserrat',sans-serif;font-size:16px;font-weight:700;letter-spacing:.03em;
+  box-shadow:0 10px 22px -12px rgba(228,89,63,.9);transition:background .15s,transform .05s;
+}
+.btn:hover{background:var(--terracotta-dark)}
+.btn:active{transform:translateY(1px)}
+.btn:focus-visible{outline:3px solid var(--navy);outline-offset:3px}
+.btn[disabled]{background:#C9C4BA;box-shadow:none;cursor:not-allowed}
+.locknote{text-align:center;font-size:13px;color:var(--ink-soft);margin-top:12px}
+.msg{
+  margin-bottom:14px;padding:13px 16px;border-radius:12px;font-size:14.5px;
+  background:#FBE9E2;border:1px solid rgba(228,89,63,.45);color:#7A2414;
+}
+.banner{
+  background:#FFF3C9;border:1px solid #E2C866;color:#5E4A06;border-radius:12px;
+  padding:10px 14px;font-size:13.5px;margin-bottom:14px;text-align:center;
+}
+
+/* ── Single-message screens ── */
+.center{text-align:center;padding:40px 24px}
+.center .script{color:var(--terracotta);font-size:46px}
+.center h2{font-family:'Playfair Display',Georgia,serif;font-size:24px;color:var(--navy);margin-top:6px;line-height:1.3}
+.center p{margin-top:12px;font-size:15.5px;color:var(--ink-soft)}
+.spinner{
+  width:34px;height:34px;border-radius:50%;margin:0 auto 14px;
+  border:3px solid rgba(12,30,61,.15);border-top-color:var(--terracotta);animation:spin .8s linear infinite;
+}
+@keyframes spin{to{transform:rotate(360deg)}}
+@media(prefers-reduced-motion:reduce){.spinner{animation-duration:2.4s}.bar i{transition:none}}
+footer{text-align:center;font-size:12.5px;color:var(--ink-soft);padding:6px 16px 0}
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="script">A Bookish Summer Soirée</div>
+  <h1>The Multi-Author Story</h1>
+  <div class="rule">ONE STORY · MANY AUTHORS</div>
+</header>
+
+<main>
+  <div id="preview-banner" class="banner hidden">Preview mode — nothing you type here is saved.</div>
+
+  <!-- Loading -->
+  <section id="s-loading" class="card center">
+    <div class="spinner"></div>
+    <p>Finding your place in the story…</p>
+  </section>
+
+  <!-- Problem -->
+  <section id="s-problem" class="card center hidden">
+    <h2 id="problem-title">This link isn’t quite right</h2>
+    <p id="problem-text">Please use the link Nicole sent you, or let her know and she’ll send a fresh one.</p>
+  </section>
+
+  <!-- Already done / thank you -->
+  <section id="s-thanks" class="card center hidden">
+    <div class="script">Thank you!</div>
+    <h2 id="thanks-title">Your part of the story is in.</h2>
+    <p id="thanks-text"></p>
+  </section>
+
+  <!-- Writing -->
+  <div id="s-write" class="hidden">
+    <section class="card">
+      <div class="hello">Welcome, <em id="who"></em>!</div>
+      <p class="lede">You’re helping write a multi-author story that will be read aloud at the Bookish Summer Soirée — written by some of my favorite authors, and <strong>you are one of them</strong>.</p>
+      <div id="intro-middle">
+        <div class="catch"><b>Here’s the catch</b>Your part begins where the previous author ended, but you only get their <strong>last 150 characters</strong> to figure out what’s been going on.</div>
+        <p class="lede">Then you add up to <strong>600 characters</strong> of your own (characters, not words!) to what I’m sure will end up a New York Times best-selling story. Have some fun with your last 150 — it’s the only thing the next author will see. 😆</p>
+      </div>
+      <div id="intro-first" class="hidden">
+        <div class="catch"><b>Here’s the catch</b>Each author only sees the <strong>last 150 characters</strong> of the author before them — and you’re first, so you get a blank page.</div>
+        <p class="lede">You get up to <strong>600 characters</strong> (characters, not words!) to start what I’m sure will end up a New York Times best-selling story. Have some fun with your last 150 — it’s the only thing the next author will see. 😆</p>
+      </div>
+      <div id="intro-last" class="hidden">
+        <div class="catch"><b>Here’s the catch</b>You only get the previous author’s <strong>last 150 characters</strong> to figure out what’s been going on — and you’re the final author, so the ending is all yours.</div>
+        <p class="lede">You get up to <strong>600 characters</strong> (characters, not words!) to wrap up what I’m sure will end up a New York Times best-selling story. 😆</p>
+      </div>
+      <p class="fine">This is all for laughs and giggles. Everyone will know which authors helped write it, but no one will know who wrote which part — so your writing career is safe. :)</p>
+    </section>
+
+    <!-- Step 1 -->
+    <section class="card">
+      <div class="step-head">
+        <div class="num">1</div>
+        <div>
+          <h2 id="h-prev">Where the last author left off</h2>
+          <p id="p-prev">Their last 150 characters. Pick the story up right here.</p>
+        </div>
+      </div>
+      <div id="prev-text" class="handoff"></div>
+      <div id="prev-first" class="opener hidden"><strong>You’re opening the story!</strong>There’s no one before you, so start it however you like — any characters, any setting, any trouble.</div>
+    </section>
+
+    <!-- Step 2 -->
+    <section class="card">
+      <div class="step-head">
+        <div class="num">2</div>
+        <div>
+          <h2 id="h-body"><label for="f-body">Your first 450 characters</label></h2>
+          <p id="p-body">The next author will never see this part.</p>
+        </div>
+      </div>
+      <textarea id="f-body" maxlength="450" placeholder="Start writing…"></textarea>
+      <div class="counter" id="c-body">
+        <div class="bar"><i></i></div>
+        <div class="count-row"><span><span class="left"></span> characters left</span><span class="used"></span></div>
+      </div>
+    </section>
+
+    <!-- Step 3 -->
+    <section class="card" id="step-tail">
+      <div class="step-head">
+        <div class="num">3</div>
+        <div>
+          <h2><label for="f-tail">Your last 150 characters</label></h2>
+          <p>This is the <strong>only</strong> part the next author gets. Leave them something good.</p>
+        </div>
+      </div>
+      <textarea id="f-tail" maxlength="150" placeholder="…and hand it off."></textarea>
+      <div class="counter" id="c-tail">
+        <div class="bar"><i></i></div>
+        <div class="count-row"><span><span class="left"></span> characters left</span><span class="used"></span></div>
+      </div>
+    </section>
+
+    <section class="card">
+      <div id="msg" class="msg hidden" role="alert"></div>
+      <button id="send" class="btn" type="button">Add my part to the story</button>
+      <p class="locknote">Once you send it, it’s locked in — so give it one last read.</p>
+    </section>
+  </div>
+
+  <footer>A Bookish Summer Soirée · Questions? Just reply to Nicole.</footer>
+</main>
+
+<script>
+(function(){
+  'use strict';
+
+  // Same database Soirée HQ uses.
+  var DB = 'https://soiree-prizes-2027-default-rtdb.firebaseio.com';
+  var BODY_MAX = 450, TAIL_MAX = 150, FINALE_MAX = 600;
+
+  var qs = new URLSearchParams(location.search);
+  var authorId = (qs.get('a') || '').trim();
+  var wantsFinale = qs.get('finale') === '1';
+  var preview = qs.get('preview');            // first | middle | last  (Nicole only — saves nothing)
+
+  var $ = function(id){ return document.getElementById(id); };
+  var mode = 'middle';                        // first | middle | last
+  var shownSeq = 0;                           // which part's hand-off is on screen
+  var authorName = '';
+  var draftKey = 'soiree_story_draft_' + authorId;
+
+  function show(id){
+    ['s-loading','s-problem','s-thanks','s-write'].forEach(function(s){ $(s).classList.toggle('hidden', s !== id); });
+    window.scrollTo(0,0);
+  }
+  function problem(title, text){
+    $('problem-title').textContent = title;
+    if (text) $('problem-text').textContent = text;
+    show('s-problem');
+  }
+  function thanks(title, text){
+    $('thanks-title').textContent = title;
+    $('thanks-text').textContent = text;
+    show('s-thanks');
+  }
+  function getJSON(path){
+    return fetch(DB + path + '.json', {cache:'no-store'}).then(function(r){
+      if (!r.ok) throw new Error('read ' + r.status);
+      return r.json();
+    });
+  }
+
+  // ── Character counters ──
+  function wireCounter(field, box){
+    var max = +field.getAttribute('maxlength');
+    var update = function(){
+      var used = field.value.length, left = Math.max(0, max - used);
+      box.querySelector('.left').textContent = left;
+      box.querySelector('.used').textContent = used + ' of ' + max + ' used';
+      box.querySelector('.bar i').style.width = Math.min(100, used / max * 100) + '%';
+      box.classList.toggle('full', left === 0);
+      box.classList.toggle('warn', left > 0 && left <= Math.round(max * 0.1));
+    };
+    field.addEventListener('input', function(){ update(); saveDraft(); hideMsg(); });
+    update();
+    return update;
+  }
+
+  // ── Draft safety net (this device only) ──
+  function saveDraft(){
+    if (preview) return;
+    try { localStorage.setItem(draftKey, JSON.stringify({b:$('f-body').value, t:$('f-tail').value})); } catch(e){}
+  }
+  function loadDraft(){
+    try {
+      var d = JSON.parse(localStorage.getItem(draftKey) || 'null');
+      if (d) { $('f-body').value = d.b || ''; $('f-tail').value = d.t || ''; }
+    } catch(e){}
+  }
+  function clearDraft(){ try { localStorage.removeItem(draftKey); } catch(e){} }
+
+  function showMsg(t){ var m = $('msg'); m.textContent = t; m.classList.remove('hidden'); }
+  function hideMsg(){ $('msg').classList.add('hidden'); }
+
+  // ── Build the writing screen for first / middle / last ──
+  function setupWrite(prevTail){
+    $('who').textContent = authorName.split(' ')[0] || authorName;
+    $('intro-middle').classList.toggle('hidden', mode !== 'middle');
+    $('intro-first').classList.toggle('hidden', mode !== 'first');
+    $('intro-last').classList.toggle('hidden', mode !== 'last');
+
+    if (mode === 'first') {
+      $('h-prev').textContent = 'Once upon a time…';
+      $('p-prev').textContent = 'You’re the very first author.';
+      $('prev-text').classList.add('hidden');
+      $('prev-first').classList.remove('hidden');
+    } else {
+      $('prev-text').textContent = '…' + prevTail;
+    }
+
+    if (mode === 'last') {
+      $('f-body').setAttribute('maxlength', FINALE_MAX);
+      $('h-body').firstElementChild.textContent = 'Your ending — up to 600 characters';
+      $('p-body').textContent = 'No one comes after you, so there’s no hand-off. Bring it home!';
+      $('f-body').placeholder = 'And in the end…';
+      $('f-body').style.minHeight = '260px';
+      $('step-tail').classList.add('hidden');
+      $('send').textContent = 'Finish the story';
+    }
+
+    if (!preview) loadDraft();
+    if (mode === 'last' && $('f-body').value.length > FINALE_MAX) $('f-body').value = $('f-body').value.slice(0, FINALE_MAX);
+    wireCounter($('f-body'), $('c-body'));
+    wireCounter($('f-tail'), $('c-tail'));
+    show('s-write');
+  }
+
+  // ── Submit ──
+  function send(){
+    hideMsg();
+    var body = $('f-body').value.trim();
+    var tail = mode === 'last' ? '' : $('f-tail').value.trim();
+    if (!body) { showMsg(mode === 'last' ? 'Your ending is still empty.' : 'Section 2 is still empty — add your first part.'); $('f-body').focus(); return; }
+    if (mode !== 'last' && !tail) { showMsg('Section 3 is still empty — the next author needs your last 150 characters.'); $('f-tail').focus(); return; }
+
+    var doneTitle = mode === 'last' ? 'You wrote the ending!' : 'Your part of the story is in.';
+    var doneText  = mode === 'last'
+      ? 'The story is complete. You’ll hear the whole thing read aloud at the Soirée!'
+      : 'Your last 150 characters are on their way to the next author. You’ll hear the whole thing read aloud at the Soirée!';
+
+    if (preview) { thanks(doneTitle, doneText + ' (Preview — nothing was saved.)'); return; }
+
+    var btn = $('send'), label = btn.textContent;
+    btn.disabled = true; btn.textContent = 'Sending…';
+    var fail = function(text){ btn.disabled = false; btn.textContent = label; showMsg(text); };
+
+    Promise.all([getJSON('/story/latest'), getJSON('/story/done/' + encodeURIComponent(authorId))]).then(function(res){
+      var latest = res[0], done = res[1];
+      if (done) { clearDraft(); thanks('Your part is already in.', 'Thank you! Nothing more to do.'); return; }
+      if (latest && latest.closed) { problem('The story is already finished', 'The final author has written the ending. Let Nicole know if you think this is a mistake.'); return; }
+      var seqNow = latest ? latest.seq : 0;
+      if (seqNow !== shownSeq) {
+        // Someone else added a part while this page was open.
+        if (mode === 'first') { mode = 'middle'; location.reload(); return; }
+        shownSeq = seqNow;
+        $('prev-text').textContent = '…' + latest.tail;
+        fail('Heads up — another author added their part while you were writing, so section 1 just changed. Your writing is still here; adjust it if you need to, then send again.');
+        document.querySelector('#prev-text').scrollIntoView({behavior:'smooth', block:'center'});
+        return;
+      }
+      var seq = seqNow + 1;
+      var isLast = mode === 'last';
+      var update = {};
+      update['parts/' + seq] = {seq:seq, authorId:authorId, name:authorName, body:body, tail:tail, finale:isLast, ts:Date.now()};
+      update['latest'] = {seq:seq, tail:tail, closed:isLast};
+      update['done/' + authorId] = true;
+      return fetch(DB + '/story.json', {
+        method:'PATCH', headers:{'Content-Type':'application/json'}, body:JSON.stringify(update)
+      }).then(function(r){
+        if (!r.ok) throw new Error('write ' + r.status);
+        clearDraft();
+        thanks(doneTitle, doneText);
+      });
+    }).catch(function(){
+      fail('That didn’t send. Check your connection and try again — your writing is still here.');
+    });
+  }
+
+  // ── Start ──
+  function start(){
+    $('send').addEventListener('click', send);
+
+    if (preview) {
+      $('preview-banner').classList.remove('hidden');
+      mode = preview === 'first' ? 'first' : preview === 'last' ? 'last' : 'middle';
+      authorName = 'Nicole';
+      shownSeq = mode === 'first' ? 0 : 3;
+      setupWrite('and that was when Beatrice realized the wedding cake was still in the back of the stolen ice cream truck, and the truck was rolling toward the lake.');
+      return;
+    }
+    if (!authorId) { problem('This link isn’t quite right'); return; }
+
+    Promise.all([
+      getJSON('/authors/' + encodeURIComponent(authorId) + '/name'),
+      getJSON('/story/done/' + encodeURIComponent(authorId)),
+      getJSON('/story/latest')
+    ]).then(function(res){
+      var name = res[0], done = res[1], latest = res[2];
+      if (!name) { problem('This link isn’t quite right'); return; }
+      authorName = String(name);
+      if (done) { thanks('Your part is already in.', 'Thank you, ' + (authorName.split(' ')[0]) + '! Nothing more to do — you’ll hear the whole story read aloud at the Soirée.'); return; }
+      if (latest && latest.closed) { problem('The story is already finished', 'The final author has written the ending. Let Nicole know if you think this is a mistake.'); return; }
+      if (!latest) { mode = 'first'; shownSeq = 0; }
+      else { mode = wantsFinale ? 'last' : 'middle'; shownSeq = latest.seq; }
+      setupWrite(latest ? latest.tail : '');
+    }).catch(function(){
+      problem('Couldn’t load the story', 'Please check your connection and reload this page.');
+    });
+  }
+
+  start();
+})();
+</script>
+</body>
+</html>
