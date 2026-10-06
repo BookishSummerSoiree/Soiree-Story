@@ -28,27 +28,23 @@ body{
 
 /* ── Masthead ── */
 .masthead{
-  background:var(--navy);color:var(--cream);text-align:center;
-  padding:calc(env(safe-area-inset-top,0px) + 38px) 20px 64px;position:relative;overflow:hidden;
+  background:#fff;text-align:center;border-bottom:4px solid var(--navy);
+  padding:calc(env(safe-area-inset-top,0px) + 26px) 20px 26px;
 }
-.masthead::before,.masthead::after{
-  content:"";position:absolute;border-radius:50%;pointer-events:none;
-}
-.masthead::before{width:260px;height:260px;left:-110px;top:-120px;background:rgba(228,89,63,.18)}
-.masthead::after{width:200px;height:200px;right:-80px;bottom:-110px;background:rgba(148,161,119,.22)}
-.script{font-family:'Alex Brush',cursive;font-size:34px;line-height:1.1;color:#F3B8A6;position:relative}
+.masthead img{display:block;width:100%;max-width:520px;height:auto;margin:0 auto}
 .masthead h1{
-  font-family:'Playfair Display',Georgia,serif;font-weight:600;
-  font-size:clamp(30px,7.2vw,46px);line-height:1.12;margin-top:6px;letter-spacing:.005em;position:relative;
+  font-family:'Playfair Display',Georgia,serif;font-weight:600;color:var(--navy);
+  font-size:clamp(26px,6.4vw,38px);line-height:1.15;margin-top:18px;
 }
 .masthead .rule{
-  display:flex;align-items:center;justify-content:center;gap:12px;margin-top:16px;
-  color:var(--sage);font-size:13px;letter-spacing:.3em;position:relative;
+  display:flex;align-items:center;justify-content:center;gap:12px;margin-top:10px;
+  color:var(--terracotta-dark);font-size:12.5px;font-weight:600;letter-spacing:.28em;
 }
-.masthead .rule::before,.masthead .rule::after{content:"";height:1px;width:46px;background:rgba(247,239,225,.35)}
+.masthead .rule::before,.masthead .rule::after{content:"";height:1px;width:40px;background:var(--line)}
+.script{font-family:'Alex Brush',cursive;font-size:34px;line-height:1.1}
 
 /* ── Layout ── */
-main{max-width:660px;margin:-36px auto 0;padding:0 16px 64px;position:relative}
+main{max-width:660px;margin:22px auto 0;padding:0 16px 64px;position:relative}
 .card{
   background:var(--paper);border:1px solid var(--line);border-radius:18px;
   padding:26px 24px;margin-bottom:18px;box-shadow:0 10px 28px -18px rgba(12,30,61,.45);
@@ -153,7 +149,7 @@ footer{text-align:center;font-size:12.5px;color:var(--ink-soft);padding:6px 16px
 <body>
 
 <header class="masthead">
-  <div class="script">A Bookish Summer Soirée</div>
+  <img src="logo.png" alt="Bookish Summer Soirée — Books, Friends, Memories" width="1200" height="283">
   <h1>The Multi-Author Story</h1>
   <div class="rule">ONE STORY · MANY AUTHORS</div>
 </header>
